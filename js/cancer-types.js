@@ -1,4 +1,4 @@
-var cancerTypes = {  
+var cancerTypesObject = {
     "active":0,
     "cancerTypes":[
         {

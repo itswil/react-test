@@ -5,17 +5,10 @@ var BASE_URL = 'http://preview.macmillan.org.uk/';
 // Top-level component
 var CancerTypeSelector = React.createClass({displayName: "CancerTypeSelector",
     render: function() {
-        var rows = [];
-        this.props.cancerTypes.forEach(function(cancer) {
-            rows.push(React.createElement(CancerItem, {cancer: cancer, key: cancer.id}));
-        });
-
         return (
             React.createElement("div", {className: "cancer-type-selector"}, 
                 React.createElement(CancerTypeSearchBar, null), 
-                React.createElement("ul", {className: "cancer-type-list"}, 
-                    rows
-                )
+                React.createElement(CancerTypeList, {cancerTypes: this.props.cancerTypes})
             )
         );
     }
@@ -32,6 +25,23 @@ var CancerTypeSearchBar = React.createClass({displayName: "CancerTypeSearchBar",
     }
 });
 
+// Second-level component
+var CancerTypeList = React.createClass({displayName: "CancerTypeList",
+    render: function() {
+        var rows = [];
+        this.props.cancerTypes.forEach(function(cancer) {
+            rows.push(React.createElement(CancerItem, {cancer: cancer, key: cancer.id}));
+        });
+
+        return (
+            React.createElement("ul", {className: "cancer-type-list"}, 
+                rows
+            )
+        );
+    }
+});
+
+// Third-level component
 var CancerItem = React.createClass({displayName: "CancerItem",
     render: function() {
         var rows = [];
@@ -57,6 +67,6 @@ var CancerItem = React.createClass({displayName: "CancerItem",
 });
 
 React.render(
-    React.createElement(CancerTypeSelector, {cancerTypes: cancerTypes.cancerTypes}),
+    React.createElement(CancerTypeSelector, {cancerTypes: cancerTypesObject.cancerTypes}),
     document.getElementById('react-cancer-type-selector')
 );
