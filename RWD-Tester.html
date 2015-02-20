@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RWD tester</title>
+    <style type="text/css">
+        html{background-color:#fff;padding:24px;padding:1.5rem;overflow-y:scroll;font:1em/1.5 Georgia,serif;color:#333;}
+        body{margin:0;}
+        iframe{display:block;margin:0 24px 24px 0;border:1px solid #ccc;}
+        .mobile{float:left;}
+        .full{margin-right:-24px;margin-left:-24px;}
+        .full > iframe{border-width:1px 0;height:768px;margin-bottom:0;width:100%;}
+        .any{resize:both;overflow:auto;}
+    </style>
+</head>
+<body>
+    <iframe src="./index.html" width="320" height="480" class="mobile"></iframe>
+    <iframe src="./index.html" width="480" height="320" class="mobile"></iframe>
+    <iframe src="./index.html" width="768" height="1024" class="tablet"></iframe>
+    <div class="full">
+        <iframe src="./index.html"></iframe>
+    </div>
+</body>
+</html>

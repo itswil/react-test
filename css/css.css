@@ -1,0 +1,31 @@
+/* Global */
+html {background:#fdfdfd url('../img/bg.png');overflow-y:scroll;-webkit-font-smoothing:antialiased;}
+a {color:#444;text-decoration:underline;}
+a:link {}
+a:visited {}
+a:hover {text-decoration:underline;}
+a:active {}
+:focus {outline:none;}
+::selection {background:#ddd;}
+::-moz-selection {background:#ddd;}
+
+/* Helper */
+.fixed-width {margin:0 auto;overflow:hidden;width:1000px;}
+.no-select {-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+
+/* Custom */
+header[role="banner"] {height:50px;min-width:1000px;}
+
+
+.content[role="main"] {margin:0 auto;width:600px;}
+
+.cancer-type-selector {
+    width: 100%;
+}
+
+.cancer-subtypes {
+    margin-left: 20px;
+}
+
+
+footer[role="contentinfo"] {}
