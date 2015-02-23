@@ -26,10 +26,19 @@ var CancerTypeSelector = React.createClass({
 
 // Second-level component
 var CancerTypeSearchBar = React.createClass({
+    handleChange: function() {
+        this.props.onUserInput(
+            this.refs.cancerTypeSearchBar.getDOMNode().value
+        );
+    },
     render: function() {
         return (
             <div className="cancer-type-search-bar">
-                <input type="text" />
+                <input type="text" placeholder="Search for a cancer type"
+                    value={this.props.filterText}
+                    onChange={this.handleChange}
+                    ref="cancerTypeSearchBar"
+                />
             </div>
         );
     }
@@ -39,6 +48,8 @@ var CancerTypeSearchBar = React.createClass({
 var CancerTypeList = React.createClass({
     render: function() {
         var rows = [];
+        var filterText = this.props.filterText;
+
         this.props.cancerTypes.forEach(function(cancer) {
             if (cancer.name.indexOf(filterText) != -1) {
                 rows.push(<CancerItem cancer={cancer} key={cancer.id} />);
