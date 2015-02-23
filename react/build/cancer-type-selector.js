@@ -51,12 +51,12 @@ var CancerTypeList = React.createClass({displayName: "CancerTypeList",
         var filterText = this.props.filterText;
 
         this.props.cancerTypes.forEach(function(cancer) {
-            if (cancer.name.indexOf(filterText) != -1) {
+            if (cancer.name.toLowerCase().indexOf(filterText) != -1) {
                 rows.push(React.createElement(CancerItem, {cancer: cancer, key: cancer.id}));
             }
 
             cancer.subtypes.forEach(function(subtype) {
-                if (cancer.name.indexOf(filterText) != -1) {
+                if (subtype.name.toLowerCase().indexOf(filterText) != -1) {
                     rows.push(React.createElement(CancerItem, {cancer: subtype, key: subtype.id}));
                 }
             });
