@@ -30,7 +30,15 @@ var CancerTypeList = React.createClass({
     render: function() {
         var rows = [];
         this.props.cancerTypes.forEach(function(cancer) {
-            rows.push(<CancerItem cancer={cancer} key={cancer.id} />);
+            if (cancer.name.indexOf(filterText) != -1) {
+                rows.push(<CancerItem cancer={cancer} key={cancer.id} />);
+            }
+
+            cancer.subtypes.forEach(function(subtype) {
+                if (cancer.name.indexOf(filterText) != -1) {
+                    rows.push(<CancerItem cancer={subtype} key={subtype.id} />);
+                }
+            });
         });
 
         return (
@@ -44,11 +52,6 @@ var CancerTypeList = React.createClass({
 // Third-level component
 var CancerItem = React.createClass({
     render: function() {
-        var rows = [];
-        this.props.cancer.subtypes.forEach(function(cancer) {
-            rows.push(<CancerItem cancer={cancer} key={cancer.id} />);
-        });
-
         return (
             <li className="cancer-item">
                 <span className="item-name">
@@ -56,11 +59,6 @@ var CancerItem = React.createClass({
                         {this.props.cancer.name}
                     </a>
                 </span>
-                {rows.length ?
-                    <ul className="cancer-subtypes">
-                        {rows}
-                    </ul>
-                : null}
             </li>
         );
     }
