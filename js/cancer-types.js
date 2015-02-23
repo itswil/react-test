@@ -17,7 +17,7 @@ var cancerTypesObject = {
             "synonyms":"",
             "subtypes":[
                 {
-                    "id":18402,
+                    "id":18405,
                     "name":"Anorectal melanoma",
                     "slug":"information-and-support/anal-cancer/anorectal-melanoma",
                     "synonyms":"",
@@ -581,7 +581,7 @@ var cancerTypesObject = {
                     ]
                 },
                 {
-                    "id":18439,
+                    "id":18441,
                     "name":"Primary peritoneal cancer",
                     "slug":"information-and-support/ovarian-cancer/primary-peritoneal-cancer",
                     "synonyms":"Ovary,Cancer of the ovaries,Primary peritoneal",
@@ -797,7 +797,7 @@ var cancerTypesObject = {
             ]
         },
         {
-            "id":18528,
+            "id":18529,
             "name":"Womb (endometrial) cancer",
             "slug":"information-and-support/womb-endometrial-cancer",
             "synonyms":"Uterus,Endometrius",
