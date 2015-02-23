@@ -4,11 +4,21 @@ var BASE_URL = 'http://preview.macmillan.org.uk/';
 
 // Top-level component
 var CancerTypeSelector = React.createClass({
+    getInitialState: function(){
+        return {
+            filterText: ''
+        }
+    },
+    handleUserInput: function(filterText) {
+        this.setState({
+            filterText: filterText
+        });
+    },
     render: function() {
         return (
             <div className="cancer-type-selector">
-                <CancerTypeSearchBar />
-                <CancerTypeList cancerTypes={this.props.cancerTypes} />
+                <CancerTypeSearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput} />
+                <CancerTypeList cancerTypes={this.props.cancerTypes} filterText={this.state.filterText} />
             </div>
         );
     }
