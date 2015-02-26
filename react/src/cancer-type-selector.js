@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 
-var BASE_URL = 'http://preview.macmillan.org.uk/';
+var BASE_URL = 'http://www.macmillan.org.uk/';
 
 // Top-level component
 var CancerTypeSelector = React.createClass({
